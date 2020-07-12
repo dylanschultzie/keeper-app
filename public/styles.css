@@ -5,7 +5,8 @@
 }
 
 body {
-  background: #eee;
+  background-color: #eee;
+  background-image: url("./img/cubes.png");
   padding: 0 16px;
 }
 
