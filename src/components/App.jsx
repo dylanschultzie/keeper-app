@@ -13,12 +13,20 @@ function App() {
     });
   }
 
+  function handleDelete(deleteIndex) {
+    setNotes(() => {
+      return notes.filter((value, index) => {
+        return index !== deleteIndex;
+      });
+    });
+  }
+
   return (
     <div>
       <Header />
       <CreateArea onAdd={handleAdd} />
       {notes.map((note, index) => {
-        return <Note key={index} title={note.title} content={note.content} />;
+        return <Note key={index} index={index} title={note.title} content={note.content} onDelete={handleDelete} />;
       })}
       <Footer />
     </div>
